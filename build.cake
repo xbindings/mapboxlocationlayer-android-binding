@@ -10,7 +10,7 @@
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 
-var VERSION = "3.2.1";
+var VERSION = "0.4.0";
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
@@ -18,11 +18,11 @@ var VERSION = "3.2.1";
 
 var artifacts = new [] {
     new Artifact {
-        SolutionPath = "./BraintreeDropIn-droid.sln",
-        AssemblyInfoPath = "./Naxam.BraintreeDropIn.Droid/Properties/AssemblyInfo.cs",
-        NuspecPath = "./dropin.nuspec",
-        DownloadUrl = "http://central.maven.org/maven2/com/braintreepayments/api/drop-in/{0}/drop-in-{0}.aar",
-        JarPath = "./Naxam.BraintreeDropIn.Droid/Jars/dropin.aar"
+        SolutionPath = "./mapboxlocationlayer-android.sln",
+        AssemblyInfoPath = "./Xbindings.MapboxLocationLayer.Droid/Properties/AssemblyInfo.cs",
+        NuspecPath = "./lib.nuspec",
+        DownloadUrl = "http://central.maven.org/maven2/com/mapbox/mapboxsdk/mapbox-android-plugin-locationlayer/{0}/mapbox-android-plugin-locationlayer-{0}.aar",
+        JarPath = "./Xbindings.MapboxLocationLayer.Droid/Jars/mapbox-android-plugin-locationlayer.aar"
     }
 };
 
@@ -61,13 +61,6 @@ Task("Restore-NuGet-Packages")
     foreach(var artifact in artifacts) {
         NuGetRestore(artifact.SolutionPath);
     }
-    foreach(var artifact in artifacts) {
-        NuGetUpdate(artifact.SolutionPath, new NuGetUpdateSettings {
-            Id = new [] {
-                "Naxam.Paypal.OneTouch"
-            }, 
-        });
-    }
 });
 
 Task("Build")
@@ -96,16 +89,9 @@ Task("Pack")
     foreach(var artifact in artifacts) {
         NuGetPack(artifact.NuspecPath, new NuGetPackSettings {
             Version = VERSION,
-            // Dependencies = new []{
-            //     new NuSpecDependency {
-            //         Id = "Naxam.BrainTree.Core",
-            //         Version = VERSION
-            //     },
-            //     new NuSpecDependency {
-            //         Id = "Naxam.Paypal.OneTouch",
-            //         Version = VERSION
-            //     }
-            // }
+            ReleaseNotes = new string[] {
+                string.Format("Mapbox for Android - LocationLayer v{0}", VERSION)
+            },
         });
     }
 });

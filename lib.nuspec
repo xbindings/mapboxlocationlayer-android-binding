@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Required elements-->
+        <id>Xbindings.MapboxLocationLayer.Droid</id>
+        <version>0.9.0</version>
+        <authors>NAXAM</authors>
+        <owners>NAXAM COMPANY LIMITED</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <title>Naxam - Mapbox LocationLayer for Android</title>
+        <summary>Naxam - Mapbox LocationLayer for Android</summary>
+        <description>Xamarin.Android binding Library - Mapbox LocationLayer</description>
+        <iconUrl>https://avatars0.githubusercontent.com/u/600935</iconUrl>
+        <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/xbindings/mapboxlocationlayer-android-binding</projectUrl>
+        <copyright>Copyright (c) 2017-present NAXAM</copyright>
+        <tags>xamarin, Xamarin.Android, Mapbox, mapbox-locationlayer, mapboxlocationlayer, mapbox-android-plugin-locationlayer </tags>
+        <dependencies>
+            <dependency id="Naxam.Jakewharton.Timber" version="4.5.1" />
+            <dependency id="Naxam.Mapbox.Droid" version="5.5.1" />
+            <dependency id="Xamarin.Android.Support.Compat" version="27.0.2" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="Xbindings.MapboxLocationLayer.Droid/bin/Release/Xbindings.MapboxLocationLayer.Droid.dll" target="lib/MonoAndroid10/Xbindings.MapboxLocationLayer.Droid.dll" />
+    </files>
+</package>
