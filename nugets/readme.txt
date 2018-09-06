@@ -1,0 +1,1 @@
+Folders for local/non-public nuget packages
